@@ -5,4 +5,4 @@ jobs:
       - image: circleci/python
     steps:
       - checkout
-      - run: scripts/check-pod-version.sh
+      - run: scripts/update-readme-with-latest-pod-version.sh
