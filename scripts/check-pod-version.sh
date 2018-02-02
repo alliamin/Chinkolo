@@ -1,21 +1,13 @@
 #!/bin/sh
 
-
-result=$(ls -l | grep -i '^  s.version' Moya.podspec)
-echo ">>> $result"
-
-version=$(echo $result | cut -d \= -f 2)
-echo "Version is > $version"
-
+version_line=$(ls -l | grep -i '^  s.version' Moya.podspec)
+version=$(echo $version_line | cut -d \= -f 2)
 version=$(echo $version | tr -d \" | tr -d ' ')
-echo "Version is > $version"
 
-# Update pod 'Moya'
+#Update Readme(s)
+## Update pod 'Moya'
 sed -i -e "s#pod 'Moya'.*#pod 'Moya' '~> ${version}'#" *.md
-# Update pod 'Moya/RxSwift'
+## Update pod 'Moya/RxSwift'
 sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
-# Update pod 'Moya/ReactiveSwift'
+## Update pod 'Moya/ReactiveSwift'
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
-
-# Remove this
-git diff
