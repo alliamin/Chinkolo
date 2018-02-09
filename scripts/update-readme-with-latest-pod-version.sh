@@ -14,7 +14,6 @@ sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
 # Push changes
-
 git config credential.helper 'cache --timeout=300'
 git config user.email "ali_amin@live.com"
 git config user.name "cisclub"
