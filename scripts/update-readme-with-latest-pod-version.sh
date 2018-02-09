@@ -15,7 +15,7 @@ sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'
 
 # Push changes
 git config credential.helper 'cache --timeout=300'
-git config user.email "ali_amin@live.com"
+git config user.email "aamin@instabug.com"
 git config user.name "CircleCI"
 git clone --depth 1 https://${2897f7b075bb7b899893356f63c7567625e16fd1}:x-oauth-basic@github.com/cisclub/Chinkolo.git
 cd Chinkolo/
