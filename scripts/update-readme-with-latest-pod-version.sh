@@ -19,5 +19,5 @@ git config user.email "ali_amin@live.com"
 git config user.name "cisclub"
 git clone --depth 1 https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git
 cd Chinkolo/
-git commit -m --allow-empty "Update 'Pod install' in Readme"
+git commit --allow-empty -m "Update 'Pod install' in Readme"
 git push origin master
