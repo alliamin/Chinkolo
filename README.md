@@ -2,7 +2,6 @@
   <img height="160" src="web/logo_github.png" />
 </p>
 
-
 # Moya
 
 [![CircleCI](https://img.shields.io/circleci/project/github/Moya/Moya/master.svg)](https://circleci.com/gh/Moya/Moya/tree/master)
