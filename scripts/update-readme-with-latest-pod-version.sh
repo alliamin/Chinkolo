@@ -14,7 +14,7 @@ sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
 # Push changes
-git config credential.helper 'cache --timeout=300'
+git config credential.helper cache
 git config user.email "aamin@instabug.com"
 git config user.name "cisclub"
 git clone --depth 1 https://2897f7b075bb7b899893356f63c7567625e16fd1@github.com/cisclub/Chinkolo.git
