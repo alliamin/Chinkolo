@@ -14,4 +14,10 @@ sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
 # Push changes
-## WIP
+git config credential.helper 'cache --timeout=300'
+git config user.email "ali_amin@live.com"
+git config user.name "CircleCI"
+git clone --depth 1 https://${2897f7b075bb7b899893356f63c7567625e16fd1}:x-oauth-basic@github.com/alliamin/Chinkolo.git
+cd Chinkolo/
+git commit --allow-empty -m "Update 'Pod install' in Readme"
+git push -u origin master
