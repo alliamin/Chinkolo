@@ -13,14 +13,18 @@ sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
 ## Update pod 'Moya/ReactiveSwift'
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
-
-git config credential.helper 'cache --timeout=300'
-git config user.email "ali_amin@live.com"
-git config user.name "cisclub"
-cd Chinkolo/
-echo "in Chinkolo"
-git add *.md
-git commit -m "Update 'Pod install' in Readme"
-echo "commit done"
-git push --verbose origin master
-echo "pushing to master"
+last_sha=$(echo git rev-parse HEAD)
+echo "last sha >> $last_sha"
+commit_message=$(echo git log -1 --pretty=%B $last_sha)
+echo "commit message >> $commit_message"
+if [[ commit_message != "Update Readme" ]]; then
+	echo "last commit is not Update"
+	git config credential.helper 'cache --timeout=300'
+	git config user.email "ali_amin@live.com"
+	git config user.name "cisclub"
+	git add *.md
+	git commit -m "Update Readme"
+	echo "commit done"
+	git push --verbose origin master
+	echo "pushing to master"
+fi
