@@ -18,8 +18,6 @@ sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
 ## Update pod 'Moya/ReactiveSwift'
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
-git diff
-
 cd Chinkolo/
 echo "in Chinkolo"
 git commit -m "Update 'Pod install' in Readme"
