@@ -19,6 +19,7 @@ git config user.email "ali_amin@live.com"
 git config user.name "cisclub"
 cd Chinkolo/
 echo "in Chinkolo"
+git add add *.md
 git commit -m "Update 'Pod install' in Readme"
 echo "commit done"
 git push --verbose origin master
