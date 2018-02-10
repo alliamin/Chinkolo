@@ -21,5 +21,8 @@ sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'
 git diff
 
 cd Chinkolo/
+echo "in Chinkolo"
 git commit -m "Update 'Pod install' in Readme"
+echo "commit done"
 git push origin master
+echo "pushing to master"
