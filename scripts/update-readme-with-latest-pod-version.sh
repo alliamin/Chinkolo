@@ -17,7 +17,7 @@ last_sha=$(git rev-parse HEAD)
 echo "last sha >> $last_sha"
 commit_message=$(git log -1 --pretty=%B $last_sha)
 echo "commit message >> $commit_message"
-if [[ commit_message != "Update Readme" ]]; then
+if [ commit_message != "Update Readme" ]; then
 	echo "last commit is not Update"
 	git config credential.helper 'cache --timeout=300'
 	git config user.email "ali_amin@live.com"
