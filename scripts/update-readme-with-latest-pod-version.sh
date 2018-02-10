@@ -27,4 +27,6 @@ if [ commit_message != "Update Readme" ]; then
 	echo "commit done"
 	git push --verbose origin master
 	echo "pushing to master"
+else
+	echo "last commit is Update"	
 fi
