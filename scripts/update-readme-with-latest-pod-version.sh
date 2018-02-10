@@ -13,9 +13,9 @@ sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
 ## Update pod 'Moya/ReactiveSwift'
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
-last_sha=$(echo git rev-parse HEAD)
+last_sha=$(git rev-parse HEAD)
 echo "last sha >> $last_sha"
-commit_message=$(echo git log -1 --pretty=%B $last_sha)
+commit_message=$(git log -1 --pretty=%B $last_sha)
 echo "commit message >> $commit_message"
 if [[ commit_message != "Update Readme" ]]; then
 	echo "last commit is not Update"
