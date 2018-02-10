@@ -4,6 +4,7 @@ git config credential.helper 'cache --timeout=300'
 git config user.email "ali_amin@live.com"
 git config user.name "cisclub"
 git clone --depth 1 https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git
+git checkout origin master
 
 # Get new version
 version_line=$(ls -l | grep -i '^  s.version' Moya.podspec)
