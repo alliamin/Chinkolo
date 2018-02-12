@@ -6,7 +6,7 @@ last_sha=$(git rev-parse HEAD)
 commit_message=$(git log -1 --pretty=%B $last_sha)
 echo "cm -> ${commit_message}"
 
-if [ commit_message = "Update Readme" ]; then
+if [ commit_message != "Update Readme" ]; then
 	# Get new version
 	version_line=$(ls -l | grep -i '^  s.version' Moya.podspec)
 	version=$(echo $version_line | cut -d \= -f 2)
