@@ -6,7 +6,9 @@ last_sha=$(git rev-parse HEAD)
 commit_message=$(git log -1 --pretty=%B $last_sha)
 echo "cm -> ${commit_message}"
 
-if [ commit_message != "Update Readme" ]; then
+if [ commit_message == "Update Readme" ]; then
+	echo "last commit is \"Update Readme\", continue ..."
+else
 	# Get new version
 	version_line=$(ls -l | grep -i '^  s.version' Moya.podspec)
 	version=$(echo $version_line | cut -d \= -f 2)
@@ -29,6 +31,4 @@ if [ commit_message != "Update Readme" ]; then
 	echo "commit done"
 	 git push https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
 	echo "pushing to master"
-else
-	echo "last commit is \"Update Readme\", continue ..."
 fi
