@@ -20,9 +20,9 @@ commit_message=$(git log -1 --pretty=%B $last_sha)
 if [ commit_message != "Update Readme" ]; then
 	git clone --depth 1 https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git
 	echo "Pushing chnages to Readme(s)."
-	#git config credential.helper 'cache --timeout=300'
-	#git config user.email "ali_amin@live.com"
-	#git config user.name "cisclub"
+	git config credential.helper 'cache --timeout=300'
+	git config user.email "ali_amin@live.com"
+	git config user.name "cisclub"
 	git add *.md
 	git commit -m "Update Readme"
 	echo "commit done"
