@@ -30,6 +30,6 @@ else
 	git commit -m "Update Readme"
 	echo "commit done"
 	# Push quitely to prevent showing the token in log
-	 git push --quite https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
+	 git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
 	echo "pushing to master"
 fi
