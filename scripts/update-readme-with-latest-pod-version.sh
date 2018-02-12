@@ -13,15 +13,16 @@ sed -i -e "s#pod 'Moya/RxSwift'.*#pod 'Moya/RxSwift' '~> ${version}'#" *.md
 ## Update pod 'Moya/ReactiveSwift'
 sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'#" *.md
 
+
 #Push changes if last commit is not "Update Readme"
 last_sha=$(git rev-parse HEAD)
 commit_message=$(git log -1 --pretty=%B $last_sha)
 if [ commit_message != "Update Readme" ]; then
+	git clone --depth 1 https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git
 	echo "Pushing chnages to Readme(s)."
-	git config credential.helper 'cache --timeout=300'
-	git config user.email "ali_amin@live.com"
-	git config user.name "cisclub"
-	git config user.password ${PASSWORD}
+	#git config credential.helper 'cache --timeout=300'
+	#git config user.email "ali_amin@live.com"
+	#git config user.name "cisclub"
 	git add *.md
 	git commit -m "Update Readme"
 	echo "commit done"
