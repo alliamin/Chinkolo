@@ -6,7 +6,7 @@ last_sha=$(git rev-parse HEAD)
 commit_message=$(git log -1 --pretty=%B $last_sha)
 echo "cm -> ${commit_message}"
 
-if [ $commit_message = "Update Readme" ]; then
+if [ "$commit_message" = "Update Readme" ]; then
 	echo "last commit is \"Update Readme\", continue ..."
 else
 	# Get new version
