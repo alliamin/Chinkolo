@@ -18,7 +18,6 @@ sed -i -e "s#pod 'Moya/ReactiveSwift'.*#pod 'Moya/ReactiveSwift' '~> ${version}'
 last_sha=$(git rev-parse HEAD)
 commit_message=$(git log -1 --pretty=%B $last_sha)
 if [ commit_message != "Update Readme" ]; then
-	git clone --depth 1 https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git
 	echo "Pushing chnages to Readme(s)."
 	git config credential.helper 'cache --timeout=300'
 	git config user.email "ali_amin@live.com"
@@ -26,7 +25,7 @@ if [ commit_message != "Update Readme" ]; then
 	git add *.md
 	git commit -m "Update Readme"
 	echo "commit done"
-	git push --verbose origin master
+	 git push https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
 	echo "pushing to master"
 else
 	echo "last commit is \"Update Readme\", continue ..."
