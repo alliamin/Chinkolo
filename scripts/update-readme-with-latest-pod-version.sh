@@ -4,7 +4,7 @@
 #Update and Push changes if last commit is not "Update Readme"
 last_sha=$(git rev-parse HEAD)
 commit_message=$(git log -1 --pretty=%B $last_sha)
-if [ "$commit_message" = "Update Readme" ]; then
+if [ "$commit_message" = "${UPDATE_README_COMMIT_MESSAGE}" ]; then
 	echo "Last commit is \"${UPDATE_README_COMMIT_MESSAGE}\", continue ..."
 else
 	# Get new version
