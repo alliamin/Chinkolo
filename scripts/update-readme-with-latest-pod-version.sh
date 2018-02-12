@@ -29,6 +29,7 @@ else
 	git add *.md
 	git commit -m "Update Readme"
 	echo "commit done"
-	 git push https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
+	# Push quitely to prevent showing the token in log
+	 git push --quite https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
 	echo "pushing to master"
 fi
