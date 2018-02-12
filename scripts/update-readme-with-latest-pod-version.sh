@@ -4,10 +4,8 @@
 #Update and Push changes if last commit is not "Update Readme"
 last_sha=$(git rev-parse HEAD)
 commit_message=$(git log -1 --pretty=%B $last_sha)
-echo "cm -> ${commit_message}"
-
 if [ "$commit_message" = "Update Readme" ]; then
-	echo "last commit is \"Update Readme\", continue ..."
+	echo "Last commit is \"${UPDATE_README_COMMIT_MESSAGE}\", continue ..."
 else
 	# Get new version
 	version_line=$(ls -l | grep -i '^  s.version' Moya.podspec)
@@ -27,9 +25,8 @@ else
 	git config user.email "ali_amin@live.com"
 	git config user.name "cisclub"
 	git add *.md
-	git commit -m "Update Readme"
-	echo "commit done"
+	git commit -m ${UPDATE_README_COMMIT_MESSAGE}
 	# Push quitely to prevent showing the token in log
 	 git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
-	echo "pushing to master"
+	echo "Done."
 fi
