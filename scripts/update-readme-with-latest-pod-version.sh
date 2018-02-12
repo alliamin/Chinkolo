@@ -25,7 +25,7 @@ else
 	git config user.email "ali_amin@live.com"
 	git config user.name "cisclub"
 	git add *.md
-	git commit -m ${UPDATE_README_COMMIT_MESSAGE}
+	git commit -m "${UPDATE_README_COMMIT_MESSAGE}"
 	# Push quitely to prevent showing the token in log
 	 git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/cisclub/Chinkolo.git master
 	echo "Done."
