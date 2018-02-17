@@ -1,11 +1,11 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - dev
     docker:
       - image: circleci/python
     steps:
+      branches:
+        only:
+          - dev
       - checkout
       - run: scripts/update-readme-with-latest-pod-version.sh
